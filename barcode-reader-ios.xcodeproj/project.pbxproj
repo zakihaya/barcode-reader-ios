@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3409BCEF280A204200874AC4 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCEE280A204200874AC4 /* CameraView.swift */; };
+		3409BCF1280A22B100874AC4 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCF0280A22B100874AC4 /* ReaderView.swift */; };
 		340E1D6927FAB5F10057EBDA /* barcode_reader_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */; };
 		340E1D6B27FAB5F10057EBDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E1D6A27FAB5F10057EBDA /* ContentView.swift */; };
 		340E1D6D27FAB5F30057EBDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340E1D6C27FAB5F30057EBDA /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3409BCEE280A204200874AC4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		3409BCF0280A22B100874AC4 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		340E1D6527FAB5F10057EBDA /* barcode-reader-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "barcode-reader-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barcode_reader_iosApp.swift; sourceTree = "<group>"; };
 		340E1D6A27FAB5F10057EBDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */,
 				340E1D6A27FAB5F10057EBDA /* ContentView.swift */,
+				3409BCEE280A204200874AC4 /* CameraView.swift */,
+				3409BCF0280A22B100874AC4 /* ReaderView.swift */,
 				340E1D6C27FAB5F30057EBDA /* Assets.xcassets */,
 				340E1D6E27FAB5F30057EBDA /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3409BCEF280A204200874AC4 /* CameraView.swift in Sources */,
+				3409BCF1280A22B100874AC4 /* ReaderView.swift in Sources */,
 				340E1D6B27FAB5F10057EBDA /* ContentView.swift in Sources */,
 				340E1D6927FAB5F10057EBDA /* barcode_reader_iosApp.swift in Sources */,
 			);
