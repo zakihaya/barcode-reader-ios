@@ -10,12 +10,11 @@ import AVFoundation
 
 enum ReaderRecordingStatus: String {
     case ready
-    case start
     case stop
 }
 
 public protocol ReaderViewDelegate: AnyObject {
-    func didFinishRecording(outputFileURL: URL)
+    func didFinishRead(code: String?)
 }
 
 public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
@@ -38,10 +37,10 @@ public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
         let videoInput: AVCaptureDeviceInput = try! AVCaptureDeviceInput(device: videoDevice!)
         captureSession.addInput(videoInput)
 
-        //アウトプット
+        // output
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        captureSession.addOutput(output)//プレビューアウトプットセット
+        captureSession.addOutput(output) //プレビューアウトプットセット
         output.metadataObjectTypes = output.availableMetadataObjectTypes
         
         // preview layer
@@ -50,34 +49,13 @@ public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
         // prevlayer.videoGravity = AVLayerVideoGravity.resizeAspect
         layer.addSublayer(prevlayer)
 
-        // video quality setting
-//        captureSession.beginConfiguration()
-//        if captureSession.canSetSessionPreset(.hd4K3840x2160) {
-//            captureSession.sessionPreset = .hd4K3840x2160
-//        } else if captureSession.canSetSessionPreset(.high) {
-//            captureSession.sessionPreset = .high
-//        }
-//        captureSession.commitConfiguration()
-
         captureSession.startRunning()
     }
     
     public override func layoutSubviews() {
         prevlayer.frame = bounds
     }
-    
-    func startRecording() {
-        // start recording
-        let tempDirectory: URL = URL(fileURLWithPath: NSTemporaryDirectory())
-        let fileURL: URL = tempDirectory.appendingPathComponent("mytemp1.mov")
-        // fileOutput.startRecording(to: fileURL, recordingDelegate: self)
-    }
-    
-    func stopRecording() {
-        // stop recording
-        // fileOutput.stopRecording()
-    }
-    
+
     private func defaultCamera() -> AVCaptureDevice? {
         if let device = AVCaptureDevice.default(.builtInDualCamera, for: AVMediaType.video, position: .back) {
             return device
@@ -92,9 +70,9 @@ public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         var highlightViewRect = CGRect.zero
         var barCodeObject : AVMetadataObject!
-        var detectionString : String!
+        var detectionString : String?
         
-        //対応バーコードタイプ
+        // 対応バーコードタイプ
         let barCodeTypes = [AVMetadataObject.ObjectType.upce,
                             AVMetadataObject.ObjectType.code39,
                             AVMetadataObject.ObjectType.code39Mod43,
@@ -107,48 +85,45 @@ public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
                             AVMetadataObject.ObjectType.aztec
         ]
         
-        //複数のバーコードの同時取得も可能
+        // 複数のバーコードの同時取得も可能
         for metadata in metadataObjects {
             for barcodeType in barCodeTypes {
                 if metadata.type == barcodeType {
                     barCodeObject = self.prevlayer.transformedMetadataObject(for: metadata as! AVMetadataMachineReadableCodeObject)
                     highlightViewRect = barCodeObject.bounds
-                    detectionString = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
+                    if let codeObject = metadata as? AVMetadataMachineReadableCodeObject {
+                        detectionString = codeObject.stringValue
+                    }
                     // self.session.stopRunning()
                     break
                 }
             }
         }
-        print(detectionString)
+        print(detectionString ?? "unknown code")
+        delegate?.didFinishRead(code: detectionString)
         self.prevlayer.frame = highlightViewRect
-    }
-}
-
-extension UIReaderView: AVCaptureFileOutputRecordingDelegate {
-    public func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
-        delegate?.didFinishRecording(outputFileURL: outputFileURL)
     }
 }
     
 struct ReaderView: UIViewRepresentable {
     @Binding var readerRecordingStatus: ReaderRecordingStatus
-    let didFinishRecording: (_ outputFileURL: URL) -> Void
+    let didFinishRead: (_ code: String?) -> Void
     
     final public class Coordinator: NSObject, ReaderViewDelegate {
         private var readerView: ReaderView
-        let didFinishRecording: (_ outputFileURL: URL) -> Void
-        init(_ readerView: ReaderView, didFinishRecording: @escaping (_ outputFileURL:URL) -> Void) {
+        let didFinishRead: (_ code: String?) -> Void
+        init(_ readerView: ReaderView, didFinishRead: @escaping (_ code:String?) -> Void) {
             self.readerView = readerView
-            self.didFinishRecording = didFinishRecording
+            self.didFinishRead = didFinishRead
         }
         
-        func didFinishRecording(outputFileURL: URL) {
-            didFinishRecording(outputFileURL)
+        func didFinishRead(code: String?) {
+            didFinishRead(code)
         }
     }
     
     public func makeCoordinator() -> Coordinator {
-        Coordinator(self, didFinishRecording: didFinishRecording)
+        Coordinator(self, didFinishRead: didFinishRead)
     }
     
     func makeUIView(context: Context) -> UIReaderView {
@@ -161,10 +136,8 @@ struct ReaderView: UIViewRepresentable {
         switch readerRecordingStatus {
         case .ready:
             return
-        case .start:
-            uiView.startRecording()
         case .stop:
-            uiView.stopRecording()
+            return
         }
     }
 }

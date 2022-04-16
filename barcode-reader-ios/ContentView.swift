@@ -13,9 +13,9 @@ struct ContentView: View {
         VStack {
             Text("Hello, world!")
                 .padding()
-            ReaderView(readerRecordingStatus: $recordingStatus) { url in
+            ReaderView(readerRecordingStatus: $recordingStatus) { code in
                 recordingStatus = .ready
-                print(url)
+                print(code ?? "")
             }
                 .frame(width: 300, height: 400)
             Button(
