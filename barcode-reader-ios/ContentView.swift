@@ -9,21 +9,31 @@ import SwiftUI
 
 struct ContentView: View {
     @State var recordingStatus: ReaderRecordingStatus = .ready
+    @State var canRead: Bool = false
+    @State var labelText: String = ""
+
     var body: some View {
         VStack {
-            Text("Hello, world!")
+            Text(labelText)
                 .padding()
             ReaderView(readerRecordingStatus: $recordingStatus) { code in
                 recordingStatus = .ready
-                print(code ?? "")
+                if (!canRead) {
+                    return
+                }
+                canRead = false
+                labelText = code ?? ""
             }
                 .frame(width: 300, height: 400)
-            Button(
-                action: {
-                    print("click")
-                }, label: {
-                    Text("ボタン").font(.largeTitle).padding(.all)
-                })
+            if (!canRead) {
+                Button(
+                    action: {
+                        canRead = true
+                        labelText = "読み取り中"
+                    }, label: {
+                        Text("読み取り").font(.largeTitle).padding(.all)
+                    })
+            }
         }
     }
 }

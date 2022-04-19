@@ -99,7 +99,7 @@ public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
                 }
             }
         }
-        print(detectionString ?? "unknown code")
+        debugPrint("ReaderView:", detectionString ?? "unknown code")
         delegate?.didFinishRead(code: detectionString)
         self.prevlayer.frame = highlightViewRect
     }
