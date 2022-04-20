@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3409BCEF280A204200874AC4 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCEE280A204200874AC4 /* CameraView.swift */; };
 		3409BCF1280A22B100874AC4 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCF0280A22B100874AC4 /* ReaderView.swift */; };
+		3409BCF7280F8B5400874AC4 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCF6280F8B5400874AC4 /* SoundPlayer.swift */; };
+		3409BCFD280FCB1A00874AC4 /* pi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BCFC280FCB1A00874AC4 /* pi.mp3 */; };
 		340E1D6927FAB5F10057EBDA /* barcode_reader_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */; };
 		340E1D6B27FAB5F10057EBDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E1D6A27FAB5F10057EBDA /* ContentView.swift */; };
 		340E1D6D27FAB5F30057EBDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340E1D6C27FAB5F30057EBDA /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		3409BCEE280A204200874AC4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3409BCF0280A22B100874AC4 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		3409BCF6280F8B5400874AC4 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		3409BCFC280FCB1A00874AC4 /* pi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi.mp3; sourceTree = "<group>"; };
 		340E1D6527FAB5F10057EBDA /* barcode-reader-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "barcode-reader-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barcode_reader_iosApp.swift; sourceTree = "<group>"; };
 		340E1D6A27FAB5F10057EBDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +40,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3409BCF2280F8AD300874AC4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3409BCFC280FCB1A00874AC4 /* pi.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3409BCF5280F8B3500874AC4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3409BCF6280F8B5400874AC4 /* SoundPlayer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		340E1D5C27FAB5F00057EBDA = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +75,8 @@
 		340E1D6727FAB5F10057EBDA /* barcode-reader-ios */ = {
 			isa = PBXGroup;
 			children = (
+				3409BCF2280F8AD300874AC4 /* Sounds */,
+				3409BCF5280F8B3500874AC4 /* Utils */,
 				340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */,
 				340E1D6A27FAB5F10057EBDA /* ContentView.swift */,
 				3409BCEE280A204200874AC4 /* CameraView.swift */,
@@ -133,6 +155,7 @@
 			files = (
 				340E1D7027FAB5F30057EBDA /* Preview Assets.xcassets in Resources */,
 				340E1D6D27FAB5F30057EBDA /* Assets.xcassets in Resources */,
+				3409BCFD280FCB1A00874AC4 /* pi.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3409BCF7280F8B5400874AC4 /* SoundPlayer.swift in Sources */,
 				3409BCEF280A204200874AC4 /* CameraView.swift in Sources */,
 				3409BCF1280A22B100874AC4 /* ReaderView.swift in Sources */,
 				340E1D6B27FAB5F10057EBDA /* ContentView.swift in Sources */,

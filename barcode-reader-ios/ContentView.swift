@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     @State var recordingStatus: ReaderRecordingStatus = .ready
     @State var canRead: Bool = false
     @State var labelText: String = ""
+    @State var soundPlayer = SoundPlayer()
 
     var body: some View {
         VStack {
@@ -23,6 +25,7 @@ struct ContentView: View {
                 }
                 canRead = false
                 labelText = code ?? ""
+                soundPlayer.play(soundType: .pi)
             }
                 .frame(width: 300, height: 400)
             if (!canRead) {
