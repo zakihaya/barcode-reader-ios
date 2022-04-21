@@ -34,8 +34,10 @@ public class UIReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
         videoDevice = defaultCamera()
 
         // video input setting
-        let videoInput: AVCaptureDeviceInput = try! AVCaptureDeviceInput(device: videoDevice!)
-        captureSession.addInput(videoInput)
+        if let targetVideoDevice = videoDevice {
+            let videoInput: AVCaptureDeviceInput = try! AVCaptureDeviceInput(device: targetVideoDevice)
+            captureSession.addInput(videoInput)
+        }
 
         // output
         let output = AVCaptureMetadataOutput()

@@ -24,8 +24,13 @@ struct ContentView: View {
                     return
                 }
                 canRead = false
-                labelText = code ?? ""
-                soundPlayer.play(soundType: .pi)
+                
+                // TODO: 金額指定ロジックの修正
+                let prices = [100, 200, 300, 400, 500, 600, 700, 800, 900]
+                let price = prices.randomElement() ?? 300
+                
+                soundPlayer.playForPrice(price)
+                labelText = "\(String(price)) 円"
             }
                 .frame(width: 300, height: 400)
             if (!canRead) {

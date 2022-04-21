@@ -11,6 +11,19 @@
 		3409BCF1280A22B100874AC4 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCF0280A22B100874AC4 /* ReaderView.swift */; };
 		3409BCF7280F8B5400874AC4 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409BCF6280F8B5400874AC4 /* SoundPlayer.swift */; };
 		3409BCFD280FCB1A00874AC4 /* pi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BCFC280FCB1A00874AC4 /* pi.mp3 */; };
+		3409BD002811198000874AC4 /* en.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BCFE2811197F00874AC4 /* en.mp3 */; };
+		3409BD012811198000874AC4 /* 300.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BCFF2811198000874AC4 /* 300.mp3 */; };
+		3409BD042811241B00874AC4 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 3409BD032811241B00874AC4 /* Collections */; };
+		3409BD062811241B00874AC4 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 3409BD052811241B00874AC4 /* DequeModule */; };
+		3409BD082811241B00874AC4 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 3409BD072811241B00874AC4 /* OrderedCollections */; };
+		3409BD1128112ABF00874AC4 /* 600.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD0928112ABE00874AC4 /* 600.mp3 */; };
+		3409BD1228112ABF00874AC4 /* 900.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD0A28112ABE00874AC4 /* 900.mp3 */; };
+		3409BD1328112ABF00874AC4 /* 800.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD0B28112ABE00874AC4 /* 800.mp3 */; };
+		3409BD1428112ABF00874AC4 /* 500.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD0C28112ABE00874AC4 /* 500.mp3 */; };
+		3409BD1528112ABF00874AC4 /* 700.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD0D28112ABF00874AC4 /* 700.mp3 */; };
+		3409BD1728112ABF00874AC4 /* 400.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD0F28112ABF00874AC4 /* 400.mp3 */; };
+		3409BD1828112ABF00874AC4 /* 200.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD1028112ABF00874AC4 /* 200.mp3 */; };
+		3409BD1A28112AE000874AC4 /* 100.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3409BD1928112AE000874AC4 /* 100.mp3 */; };
 		340E1D6927FAB5F10057EBDA /* barcode_reader_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */; };
 		340E1D6B27FAB5F10057EBDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E1D6A27FAB5F10057EBDA /* ContentView.swift */; };
 		340E1D6D27FAB5F30057EBDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340E1D6C27FAB5F30057EBDA /* Assets.xcassets */; };
@@ -22,6 +35,16 @@
 		3409BCF0280A22B100874AC4 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		3409BCF6280F8B5400874AC4 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		3409BCFC280FCB1A00874AC4 /* pi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi.mp3; sourceTree = "<group>"; };
+		3409BCFE2811197F00874AC4 /* en.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = en.mp3; sourceTree = "<group>"; };
+		3409BCFF2811198000874AC4 /* 300.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 300.mp3; sourceTree = "<group>"; };
+		3409BD0928112ABE00874AC4 /* 600.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 600.mp3; sourceTree = "<group>"; };
+		3409BD0A28112ABE00874AC4 /* 900.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 900.mp3; sourceTree = "<group>"; };
+		3409BD0B28112ABE00874AC4 /* 800.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 800.mp3; sourceTree = "<group>"; };
+		3409BD0C28112ABE00874AC4 /* 500.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 500.mp3; sourceTree = "<group>"; };
+		3409BD0D28112ABF00874AC4 /* 700.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 700.mp3; sourceTree = "<group>"; };
+		3409BD0F28112ABF00874AC4 /* 400.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 400.mp3; sourceTree = "<group>"; };
+		3409BD1028112ABF00874AC4 /* 200.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 200.mp3; sourceTree = "<group>"; };
+		3409BD1928112AE000874AC4 /* 100.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 100.mp3; sourceTree = "<group>"; };
 		340E1D6527FAB5F10057EBDA /* barcode-reader-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "barcode-reader-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		340E1D6827FAB5F10057EBDA /* barcode_reader_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barcode_reader_iosApp.swift; sourceTree = "<group>"; };
 		340E1D6A27FAB5F10057EBDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3409BD042811241B00874AC4 /* Collections in Frameworks */,
+				3409BD062811241B00874AC4 /* DequeModule in Frameworks */,
+				3409BD082811241B00874AC4 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +70,16 @@
 			isa = PBXGroup;
 			children = (
 				3409BCFC280FCB1A00874AC4 /* pi.mp3 */,
+				3409BD1928112AE000874AC4 /* 100.mp3 */,
+				3409BD1028112ABF00874AC4 /* 200.mp3 */,
+				3409BCFF2811198000874AC4 /* 300.mp3 */,
+				3409BD0F28112ABF00874AC4 /* 400.mp3 */,
+				3409BD0C28112ABE00874AC4 /* 500.mp3 */,
+				3409BD0928112ABE00874AC4 /* 600.mp3 */,
+				3409BD0D28112ABF00874AC4 /* 700.mp3 */,
+				3409BD0B28112ABE00874AC4 /* 800.mp3 */,
+				3409BD0A28112ABE00874AC4 /* 900.mp3 */,
+				3409BCFE2811197F00874AC4 /* en.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -111,6 +147,11 @@
 			dependencies = (
 			);
 			name = "barcode-reader-ios";
+			packageProductDependencies = (
+				3409BD032811241B00874AC4 /* Collections */,
+				3409BD052811241B00874AC4 /* DequeModule */,
+				3409BD072811241B00874AC4 /* OrderedCollections */,
+			);
 			productName = "barcode-reader-ios";
 			productReference = 340E1D6527FAB5F10057EBDA /* barcode-reader-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 340E1D5C27FAB5F00057EBDA;
+			packageReferences = (
+				3409BD022811241A00874AC4 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 340E1D6627FAB5F10057EBDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,8 +198,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				340E1D7027FAB5F30057EBDA /* Preview Assets.xcassets in Resources */,
+				3409BD1828112ABF00874AC4 /* 200.mp3 in Resources */,
+				3409BD1A28112AE000874AC4 /* 100.mp3 in Resources */,
 				340E1D6D27FAB5F30057EBDA /* Assets.xcassets in Resources */,
+				3409BD1528112ABF00874AC4 /* 700.mp3 in Resources */,
+				3409BD1228112ABF00874AC4 /* 900.mp3 in Resources */,
+				3409BD1428112ABF00874AC4 /* 500.mp3 in Resources */,
 				3409BCFD280FCB1A00874AC4 /* pi.mp3 in Resources */,
+				3409BD1128112ABF00874AC4 /* 600.mp3 in Resources */,
+				3409BD1328112ABF00874AC4 /* 800.mp3 in Resources */,
+				3409BD1728112ABF00874AC4 /* 400.mp3 in Resources */,
+				3409BD012811198000874AC4 /* 300.mp3 in Resources */,
+				3409BD002811198000874AC4 /* en.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +429,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3409BD022811241A00874AC4 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3409BD032811241B00874AC4 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3409BD022811241A00874AC4 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		3409BD052811241B00874AC4 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3409BD022811241A00874AC4 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		3409BD072811241B00874AC4 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3409BD022811241A00874AC4 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 340E1D5D27FAB5F00057EBDA /* Project object */;
 }
