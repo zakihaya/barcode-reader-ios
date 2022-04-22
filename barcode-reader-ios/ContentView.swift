@@ -17,6 +17,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text(labelText)
+                .font(.system(size: 50, weight: .black, design: .default))
                 .padding()
             ReaderView(readerRecordingStatus: $recordingStatus) { code in
                 recordingStatus = .ready
