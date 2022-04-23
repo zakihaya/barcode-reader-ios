@@ -11,6 +11,7 @@ import DequeModule
 
 class SoundPlayer : NSObject {
     var audioPlayer: AVAudioPlayer!
+    let synthesizer = AVSpeechSynthesizer()
     var playFilesQueue = Deque<(filePath: URL, rate: Float)>()
     var isPlaying = false
 
@@ -32,9 +33,10 @@ class SoundPlayer : NSObject {
 
     func playForPrice(_ price: Int) {
         self.play(soundType: .pi)
-        // TODO: 複数桁対応
-        self.play(fileName: "\(String(price)).mp3", rate: 1)
-        self.play(soundType: .en, rate: 1)
+        let utterance = AVSpeechUtterance(string: "\(price)円")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+        utterance.rate = 0.5
+        synthesizer.speak(utterance)
     }
     
     func startPlay() {

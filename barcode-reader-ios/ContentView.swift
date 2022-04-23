@@ -26,10 +26,12 @@ struct ContentView: View {
                 }
                 canRead = false
                 
-                // TODO: 金額指定ロジックの修正
-                let prices = [100, 200, 300, 400, 500, 600, 700, 800, 900]
-                let price = prices.randomElement() ?? 300
-                
+                let digit = Int.random(in: 1...5)
+                // 指数部をIntにするとDecimalが返ってきてしまい、変換が面倒になる
+                let max = Int(pow(10, Float(digit)) - 1)
+                let min = Int(pow(10, Float(digit - 1)))
+                let price = Int.random(in: min...max)
+
                 soundPlayer.playForPrice(price)
                 labelText = "\(String(price)) 円"
             }
