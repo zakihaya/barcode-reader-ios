@@ -9,6 +9,8 @@ import SwiftUI
 import AVFoundation
 
 struct ContentView: View {
+    let scanningText = "読み取り中"
+
     @State var recordingStatus: ReaderRecordingStatus = .ready
     @State var canRead: Bool = false
     @State var labelText: String = ""
@@ -16,9 +18,20 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text(labelText)
-                .font(.system(size: 50, weight: .black, design: .default))
-                .padding()
+            if (labelText == "" || labelText == scanningText) {
+                Text(labelText)
+                    .font(.system(size: 50, weight: .black, design: .default))
+                    .padding()
+            } else {
+                Button(
+                    action: {
+                        soundPlayer.playForPrice(labelText)
+                    }, label: {
+                        Text(labelText)
+                            .font(.system(size: 50, weight: .black, design: .default))
+                            .padding()
+                    })
+            }
             ReaderView(readerRecordingStatus: $recordingStatus) { code in
                 recordingStatus = .ready
                 if (!canRead) {
@@ -26,26 +39,30 @@ struct ContentView: View {
                 }
                 canRead = false
                 
-                let digit = Int.random(in: 1...5)
-                // 指数部をIntにするとDecimalが返ってきてしまい、変換が面倒になる
-                let max = Int(pow(10, Float(digit)) - 1)
-                let min = Int(pow(10, Float(digit - 1)))
-                let price = Int.random(in: min...max)
-
-                soundPlayer.playForPrice(price)
+                let price = getPrice()
                 labelText = "\(String(price)) 円"
+                soundPlayer.playForPrice(labelText)
             }
                 .frame(width: 300, height: 400)
             if (!canRead) {
                 Button(
                     action: {
                         canRead = true
-                        labelText = "読み取り中"
+                        labelText = scanningText
                     }, label: {
                         Text("読み取り").font(.largeTitle).padding(.all)
                     })
             }
         }
+    }
+    
+    func getPrice() -> Int {
+        // 4桁まで
+        let digit = Int.random(in: 1...4)
+        // 指数部をIntにするとDecimalが返ってきてしまい、変換が面倒になる
+        let max = Int(pow(10, Float(digit)) - 1)
+        let min = Int(pow(10, Float(digit - 1)))
+        return Int.random(in: min...max)
     }
 }
 

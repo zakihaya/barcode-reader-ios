@@ -31,9 +31,9 @@ class SoundPlayer : NSObject {
         self.startPlay()
     }
 
-    func playForPrice(_ price: Int) {
+    func playForPrice(_ priceText: String) {
         self.play(soundType: .pi)
-        let utterance = AVSpeechUtterance(string: "\(price)円")
+        let utterance = AVSpeechUtterance(string: priceText)
         utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
         utterance.rate = 0.5
         synthesizer.speak(utterance)
